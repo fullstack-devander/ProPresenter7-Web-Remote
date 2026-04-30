@@ -129,4 +129,10 @@
   <data name="WebServerTitle" xml:space="preserve">
     <value>Web Server</value>
   </data>
+  <data name="ServerStatusRunning" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="ServerStatusStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
 </root>

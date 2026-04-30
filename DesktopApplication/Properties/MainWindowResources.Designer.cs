@@ -95,5 +95,23 @@ namespace ProPresenter7WEB.DesktopApplication.Properties {
                 return ResourceManager.GetString("WebServerTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running.
+        /// </summary>
+        public static string ServerStatusRunning {
+            get {
+                return ResourceManager.GetString("ServerStatusRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopped.
+        /// </summary>
+        public static string ServerStatusStopped {
+            get {
+                return ResourceManager.GetString("ServerStatusStopped", resourceCulture);
+            }
+        }
     }
 }

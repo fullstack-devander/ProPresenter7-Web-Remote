@@ -42,9 +42,14 @@ namespace ProPresenter7WEB.DesktopApplication.ViewModels
                 {
                     _isServerRunning = value;
                     OnPropertyChanged(nameof(IsServerRunning));
+                    OnPropertyChanged(nameof(ServerStatus));
                 }
             }
         }
+
+        public string ServerStatus => _isServerRunning 
+            ? MainWindowResources.ServerStatusRunning 
+            : MainWindowResources.ServerStatusStopped;
 
         public async Task OnClickStartButton()
         {
@@ -64,7 +69,7 @@ namespace ProPresenter7WEB.DesktopApplication.ViewModels
             {
                 await App.WebApplication.StartAsync();
 
-                _isServerRunning = true;
+                IsServerRunning = true;
                 StartServerButtonText = MainWindowResources.StopServerButtonText;
 
                 _logger.LogInformation("Web Server is started.");
@@ -81,7 +86,7 @@ namespace ProPresenter7WEB.DesktopApplication.ViewModels
             {
                 await App.WebApplication.StopAsync();
                 await App.WebApplication.DisposeAsync();
-                _isServerRunning = false;
+                IsServerRunning = false;
 
                 StartServerButtonText = MainWindowResources.StartServerButtonText;
 
